@@ -1,5 +1,6 @@
 
 import './App.css'
+import ToDo from './Todo';
 
 function App() {
 
@@ -7,7 +8,10 @@ function App() {
     <>
       
       <h1>React Core Concept</h1>
-      <Student></Student>
+      <ToDo task = 'Learn React' isDone={true}></ToDo>
+      <ToDo task = 'Revise JS' isDone={false}></ToDo>
+      <ToDo task = 'Take a shower' isDone={true}></ToDo>
+      {/* <Student></Student>
       <Student></Student>
       <Person></Person>
       <Developer name="Zim" tech="Python"></Developer>
@@ -16,8 +20,18 @@ function App() {
       <Device dname="acer" user="Jobaer" year="2"></Device>
       <Device dname="Walton" user="Shakil" year="unknown"></Device>
       <Device dname="hp" user="Abir" year="unknown"></Device>
-      
+      <Player name="AB Deviliars" runs = "10,000"></Player> */}
     </>
+  )
+}
+
+function Player({name, runs}){
+  return(
+    <div>
+      <h3>Name: {name}</h3>
+      <p>Runs:{runs}</p>
+    </div>
+
   )
 }
 
@@ -44,16 +58,16 @@ function Device(devinfo){
   )
 }
 
-function Person(){
+function Person() {
   const age = 24;
   const personStyle = {
     color: 'red',
-    textAlign: 'right'
-  }
-  return (
-    <p style={personStyle}>I am a person {age}</p>
-  )
+    textAlign: 'right',
+  };
+
+  return <p style={personStyle}>I am a person {age}</p>;
 }
+
 
 function Sports(){
   return(
