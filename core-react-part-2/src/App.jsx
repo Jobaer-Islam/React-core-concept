@@ -1,5 +1,6 @@
 
 import './App.css'
+import Batsman from './Batsman'
 import Counter from './Counter'
 
 
@@ -21,10 +22,12 @@ function App() {
 
   return (
     <>
-
-      <Counter></Counter>
       <h3>Vite + React</h3>
 
+      <Batsman></Batsman>
+      
+      <Counter></Counter>
+    
 
       {/* <button onclick = "handleClick()">Click me</button> */}
 
