@@ -10,11 +10,20 @@ const Countries = ({ countriesPromise }) => {
     const handleVisitedCountries = (country) => {
         console.log("country visited clicked to be added", country);
 
+        const newVisitedCountries = [...visitedCountries, country];
+        setVisitedCountries(newVisitedCountries);
+
     }
 
     return (
         <div>
             <h1>Traveling Countries: {countries.length}</h1>
+            <h4>Traveled so far: {visitedCountries.length}</h4>
+            <ol>
+                {
+                    visitedCountries.map(country=> <li>{country.name.common}</li>)
+                }
+            </ol>
             <div className='countries'>
                 {
                     countries.map(country => <Country
