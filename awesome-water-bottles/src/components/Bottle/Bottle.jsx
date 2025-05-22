@@ -1,9 +1,9 @@
 import React from 'react';
 import './Bottle.css'
 
-const Bottle = ({bottle}) => {
+const Bottle = ({bottle, handleAddToCart}) => {
     const {img, name, price, stock } = bottle;
-    console.log(bottle);
+    // console.log(bottle);
     
     return (
         <div className='card bottle'>
@@ -11,7 +11,7 @@ const Bottle = ({bottle}) => {
             <img src={img} alt="" />
             <button>${price}</button>
             <p>In Stock : {stock}</p>
-            <button>Buy Now</button>
+            <button onClick={()=> handleAddToCart(bottle)}>Buy Now</button>
         </div>
     );
 };
