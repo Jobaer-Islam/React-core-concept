@@ -16,10 +16,16 @@ function App() {
 
   // console.log(bookmarked);
 
-  const handleMarkAsRead = (time) =>{
+  const handleMarkAsRead = (time, id) =>{
     const newTime = readingCount + time;
     setReadingCount(newTime);
+    handleRemoveFromBookMark(id);
 
+  }
+
+  const handleRemoveFromBookMark = (id)=>{
+    const remainingBookMark = bookmarked.filter((mark)=> mark.id !== id);
+    setBookmarked(remainingBookMark);
   }
 
   return (
@@ -36,7 +42,7 @@ function App() {
           <h1>Reading time: {readingCount} </h1>
           <h1>Bookmarked count: {bookmarked.length}</h1>
           {
-            bookmarked.map((marked)=><p>{marked.title}</p>)
+            bookmarked.map((marked)=><p className='bg-cyan-600 p-3 m-2 rounded-xl'>{marked.title}</p>)
           }
         </div>
       </div>
