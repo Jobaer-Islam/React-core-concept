@@ -4,14 +4,26 @@ const App = () => {
 
   const [counter, setCounter] = useState(0);
 
+  const handleLogin = (event) =>{
+    event.preventDefault();
+    console.log(event.target.name.value);
+  }
+
   return (
     <div>
-      <h1>Total Clicked: {counter}</h1>
-      <button onClick={()=>setCounter(counter+1)} className="btn btn-success">Success</button>
-      
+      <form onSubmit={handleLogin}>
+        <input
+          className='input input-primary'
+          type="text"
+          name='name'
+          placeholder='Your Name'
+          />
+          <button type='submit' className='btn btn-accent'>Submit</button>
+      </form>
+
     </div>
 
-    
+
   );
 };
 
