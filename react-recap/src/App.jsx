@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const App = () => {
+
+  const [counter, setCounter] = useState(0);
+
   return (
     <div>
-      <h1 className='bg-red-300'>Hellooooo</h1>
+      <h1>Total Clicked: {counter}</h1>
+      <button onClick={()=>setCounter(counter+1)} className="btn btn-success">Success</button>
+      
     </div>
+
+    
   );
 };
 
