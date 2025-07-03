@@ -1,0 +1,8 @@
+nav {
+    border: 2px solid cyan;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
